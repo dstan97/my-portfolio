@@ -17,3 +17,10 @@
 .home-name {
   font-size: 150px;
 }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  background: #FFF3E2;
+}

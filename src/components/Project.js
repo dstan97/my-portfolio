@@ -18,14 +18,14 @@ export default function Project() {
     }, []);
 
     return (
-        <main className="bg-stone-800 min-h-screen p-12">
+        <main className="min-h-screen p-12">
             <section className="container mx-auto">
-                <h1 className="text-white text-5xl flex justify-center Roboto">Projects</h1>
-                <h2 className="text-lg text-white flex justify-center mb-12">Completed projects that I have made</h2>
+                <h1 className="text-secondary text-5xl flex justify-center Roboto">Projects</h1>
+                <h2 className="text-lg text-secondary flex justify-center mb-12">Completed projects that I have made</h2>
                 <section className="grid md:grid-cols-2 lg:grid-col-3 gap-8">
                     {projectData && projectData.map((project, index) => (
-                        <article className="relative rounded-lg shadow-xl bg-white p-16">
-                            <h3 className="text-purple-900 text-3xl font-bold hover:text-purple-600">
+                        <article className="relative rounded-lg shadow-xl shadow-secondary-dark mx-auto bg-gradient-to-br from-secondary to-secondary-dark p-16">
+                            <h3 className="bg-clip-text bg-gradient-to-b text-transparent to-primary-dark from-primary text-3xl font-bold hover:text-primary">
                                 <a
                                     href={project.link}
                                     alt={project.title}
@@ -35,7 +35,7 @@ export default function Project() {
                                     {project.title}
                                 </a>
                             </h3>
-                            <div className="text-purple-600 text-xs space-x-4">
+                            <div className="text-primary text-xs space-x-4">
                                 <span>
                                     <strong className="font-bold">Finished on</strong>:{" "}
                                     {new Date(project.date).toLocaleDateString()}
@@ -44,7 +44,7 @@ export default function Project() {
                                     <strong className="font-bold">Type</strong>:{" "}
                                     {project.projectType}
                                 </span>
-                                <p className="my-6 text-lg text-purple-600 leading-relaxed">
+                                <p className="my-6 text-lg text-primary leading-relaxed">
                                     {project.description}
                                 </p>
                                 <a
@@ -52,7 +52,7 @@ export default function Project() {
                                     alt={project.title}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-purple-900 font-bold hover:underline hover:text-purple-600 text-xl"
+                                    className="bg-clip-text bg-gradient-to-b text-transparent to-primary-dark from-primary font-bold hover:underline hover:text-primary text-xl"
                                 >
                                     View The Project{" "}
                                     <span role="img" aria-label="right pointer">🡆</span>

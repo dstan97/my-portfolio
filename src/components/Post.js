@@ -22,22 +22,22 @@ export default function Post() {
     }, []);
 
     return (
-        <main className="bg-stone-800 min-h-screen p-12">
+        <main className="min-h-screen md:p-12">
             <section className="container mx-auto">
-                <h1 className="text-white text-5xl flex justify-center Roboto">Blog Posts</h1>
-                <h2 className="text-lg text-white flex justify-center mb-12">Welcome to my blog</h2>
-                <div className="grid md:grid-cols-2 lg:grid-col-3 gap-8">
+                <h1 className="text-secondary text-5xl flex justify-center Roboto">Blog Posts</h1>
+                <h2 className="text-lg text-secondary flex justify-center mb-12">Welcome to my blog</h2>
+                <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
                     {postData && postData.map((post, index) => (
                         <article>
                             <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                            <span className="block h-64 relative rounded shadow leading-snug bg-white border-l-8" key={index}>
+                            <span className="block h-64 relative rounded shadow leading-snug bg-gradient-to-br from-secondary to-secondary-dark" key={index}>
                                 <img
                                     src={post.mainImage.asset.url}
                                     alt={post.mainImage.alt}
-                                    className="w-full h-full rounded-r object-cover absolute"
+                                    className="w-full h-full rounded object-cover absolute"
                                 />
-                                <span className="block relative h-full flex justify-end items-end pr-4 pb-4">
-                                    <h3 className="text-white text-lg font-blog py-4 bg-purple-600 bg-opacity-75">
+                                <span className="relative h-full flex justify-end items-end pr-4 pb-4">
+                                    <h3 className="text-primary text-lg font-blog py-4 bg-secondary-dark rounded p-2">
                                         {post.title}
                                     </h3>
                                 </span>

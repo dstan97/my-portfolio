@@ -28,12 +28,12 @@ export default function SinglePost() {
     if (!singlePost) return <div>Loading...</div>;
 
     return (
-        <main className="bg-stone-800 min-h-screen p-12">
-            <article className="container shadow-lg mx-auto bg-white rounded-lg">
+        <main className="min-h-screen p-12">
+            <article className="container shadow-lg shadow-secondary-dark mx-auto bg-primary">
                 <header className="relative">
                     <div className="absolute h-full w-full flex items-center justify-center p-8">
-                        <div className="bg-purple-600 bg-opacity-75 rounded p-12">
-                            <h1 className="Roboto text-white text-3xl lg:text-6xl mb-4">
+                        <div className="bg-primary bg-opacity-75 rounded p-12">
+                            <h1 className="Roboto text-secondary-dark text-3xl lg:text-6xl mb-4">
                                 {singlePost.title}
                             </h1>
                         </div>
@@ -45,7 +45,7 @@ export default function SinglePost() {
                         style={{ height: "400px" }}
                     />
                 </header>
-                <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full">
+                <div className=" prose lg:prose-xl max-w-full">
                     <BlockContent
                         blocks={singlePost.body}
                         projectId="arnxyktp"

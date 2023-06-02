@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 
 export default function Project() {
+    useEffect(() => {
+        document.title = 'Projects';
+      }, []);
+
     const [projectData, setProjectData] = useState(null);
+
 
     useEffect(() => {
         sanityClient.fetch(`*[_type == "project"]{

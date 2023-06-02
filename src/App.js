@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import { Contact } from "./components/Contact";
@@ -9,10 +8,6 @@ import NavBar from "./components/NavBar";
 import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
-
-  useEffect(() => {
-    document.title = 'Dean Standerwick Developer';
-  }, []);
 
   return (
     <BrowserRouter>

@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import sanityClient from "../client.js";
 
 export default function Post() {
+    useEffect(() => {
+        document.title = 'Blog';
+      }, []);
+      
     const [postData, setPost] = useState(null);
 
     useEffect(() => {

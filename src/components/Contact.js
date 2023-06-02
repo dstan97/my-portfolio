@@ -1,7 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
+  useEffect(() => {
+    document.title = 'Contact';
+  }, []);
+  
   const form = useRef();
 
   const sendEmail = (e) => {

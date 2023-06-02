@@ -10,6 +10,10 @@ function urlFor(source) {
 }
 
 export default function Home() {
+    useEffect(() => {
+        document.title = 'Homepage';
+      }, []);
+
     const [author, setAuthor] = useState(null);
     const [postData, setPost] = useState(null);
     const [projectData, setProjectData] = useState(null);

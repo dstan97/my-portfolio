@@ -25,10 +25,10 @@ export default function SinglePost() {
             .catch(console.error);
     }, [slug]);
 
-    if (!singlePost) return <div>Loading...</div>;
+    if (!singlePost) return <div></div>;
 
     return (
-        <main className="min-h-screen p-12">
+        <main className="">
             <article className="container shadow-lg shadow-secondary-dark mx-auto bg-primary">
                 <header className="relative">
                     <div className="absolute h-full w-full flex items-center justify-center p-8">

@@ -4,25 +4,25 @@ import { SocialIcon } from "react-social-icons"
 
 export default function NavBar() {
     return (
-        <header className="bg-gradient-to-br from-secondary to-secondary-dark">
-            <div className="container mx-auto flex justify-between">
-                <nav className="flex">
-                    <NavLink to="/" exact className="inlflex-flex items-center py-3 px-3 my-3 text-primary hover:text-primary-dark text-4xl font-bold Roboto tracking-widest">
+        <header className="m-0">
+            <div className="flex justify-between bg-secondary p-3 md:p-0 md:bg-transparent">
+                <nav className="flex justify-between uppercase text-base md:text-3xl text-primary md:bg-secondary rounded-br-3xl w-3/4 md:w-1/3 md:p-3 h-1/4 md:m-0 m-auto">
+                    <NavLink to="/" exact className="font-bold Roboto hover:text-white">
                         Home
                     </NavLink>
-                    <NavLink to="/post" className="inlflex-flex items-center py-3 px-3 my-3 text-primary hover:text-primary-dark text-4xl font-bold Roboto tracking-widest">
+                    <NavLink to="/post" className="font-bold Roboto hover:text-white">
                         Blog
                     </NavLink>
-                    <NavLink to="/project" className="inlflex-flex items-center py-3 px-3 my-3 text-primary hover:text-primary-dark text-4xl font-bold Roboto tracking-widest">
+                    <NavLink to="/project" className="font-bold Roboto hover:text-white">
                         Projects
                     </NavLink>
-                    <NavLink to="/contact" className="inlflex-flex items-center py-3 px-3 my-3 text-primary hover:text-primary-dark text-4xl font-bold Roboto tracking-widest">
+                    <NavLink to="/contact" className="font-bold Roboto hover:text-white">
                         Contact
                     </NavLink>
                 </nav>
-                <div className="inline-flex py-3 px-3 my-3">
-                    <SocialIcon url="https://github.com/dstan97" className="mr-4" target="_blank" fgColor="#fff3e2" style={{ height: 35, width: 35}} />
-                    <SocialIcon url="https://www.linkedin.com/in/dean-standerwick-b41769255/" className="mr-4" target="_blank" fgColor="#fff3e2" style={{ height: 35, width: 35}} />
+                <div className="w-1/4 flex justify-end md:p-3 h-1/4 md:m-0 m-auto">
+                    <SocialIcon url="https://github.com/dstan97" className="mr-2 rounded-full bg-primary" bgColor="#161616" target="_blank" style={{ height: 35, width: 35}} />
+                    <SocialIcon url="https://www.linkedin.com/in/dean-standerwick-b41769255/" className="rounded-full bg-primary" target="_blank" bgColor="#161616" style={{ height: 35, width: 35}} />
                 </div>
             </div>
         </header>

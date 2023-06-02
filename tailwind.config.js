@@ -6,11 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#FFF3E2',
-        'primary-dark': '#FFE5CA',
-        'secondary': '#FA9884',
-        'secondary-dark': '#E74646'
+        'primary': '#2EF297',
+        'secondary': '#161616'
       }
+    },
+    fontFamily: {
+      'Roboto': ['roboto', 'sans-serif'],
     },
   },
   plugins: [],

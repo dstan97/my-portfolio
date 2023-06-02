@@ -18,14 +18,14 @@ export default function Project() {
     }, []);
 
     return (
-        <main className="min-h-screen p-12">
+        <main className="z-40">
             <section className="container mx-auto">
                 <h1 className="text-secondary text-5xl flex justify-center Roboto">Projects</h1>
                 <h2 className="text-lg text-secondary flex justify-center mb-12">Completed projects that I have made</h2>
                 <section className="grid md:grid-cols-2 lg:grid-col-3 gap-8">
                     {projectData && projectData.map((project, index) => (
-                        <article className="relative rounded-lg shadow-xl shadow-secondary-dark mx-auto bg-gradient-to-br from-secondary to-secondary-dark p-16">
-                            <h3 className="bg-clip-text bg-gradient-to-b text-transparent to-primary-dark from-primary text-3xl font-bold hover:text-primary">
+                        <article className="relative rounded-lg mx-auto bg-secondary p-16">
+                            <h3 className="text-white text-3xl font-bold hover:text-primary">
                                 <a
                                     href={project.link}
                                     alt={project.title}
@@ -52,7 +52,7 @@ export default function Project() {
                                     alt={project.title}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-clip-text bg-gradient-to-b text-transparent to-primary-dark from-primary font-bold hover:underline hover:text-primary text-xl"
+                                    className="text-white font-bold hover:underline hover:text-primary text-xl"
                                 >
                                     View The Project{" "}
                                     <span role="img" aria-label="right pointer">🡆</span>

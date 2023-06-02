@@ -6,7 +6,7 @@ export default function Post() {
     useEffect(() => {
         document.title = 'Blog';
       }, []);
-      
+
     const [postData, setPost] = useState(null);
 
     useEffect(() => {
@@ -34,18 +34,22 @@ export default function Post() {
                     {postData && postData.map((post, index) => (
                         <article>
                             <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                            <span className="block h-64 relative rounded shadow leading-snug bg-gradient-to-br from-secondary to-secondary-dark" key={index}>
-                                <img
-                                    src={post.mainImage.asset.url}
-                                    alt={post.mainImage.alt}
-                                    className="w-full h-full rounded object-cover absolute"
-                                />
-                                <span className="relative h-full flex justify-end items-end pr-4 pb-4">
-                                    <h3 className="text-white text-lg font-blog bg-secondary rounded p-2">
-                                        {post.title}
-                                    </h3>
-                                </span>
-                            </span>
+                                <article className="post-article">
+                                    <span className="block h-64 relative rounded leading-snug" key={index}>
+                                        <div className="img-wrapper rounded">
+                                            <img
+                                                src={post.mainImage.asset.url}
+                                                alt={post.mainImage.alt}
+                                                className="object-cover w-full h-full absolute"
+                                            />
+                                        </div>
+                                        <span className="relative h-full flex justify-end items-end pr-4 pb-4">
+                                            <h3 className="text-primary text-lg font-blog bg-secondary rounded p-2">
+                                                {post.title}
+                                            </h3>
+                                        </span>
+                                    </span>
+                                </article>
                             </Link>
                         </article>
                     ))}

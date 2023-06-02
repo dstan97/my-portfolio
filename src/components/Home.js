@@ -60,7 +60,7 @@ export default function Home() {
     return (
         <main className="z-40">
             <div className="container mx-auto">
-                <section className="lg:flex p-4 md:p-20 mt-10 mb-5">
+                <section className="lg:flex p-4 md:px-20 mt-32">
                     <div className="flex">
                         <img
                             src={urlFor(author.authorImage).url()}
@@ -79,39 +79,43 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                <hr className="border-secondary border-2 opacity-25 rounded-xl"></hr>
-                <section className="container mx-auto md:p-20 text-secondary my-5">
-                    <h1 className="text-5xl flex justify-center Roboto">Blog Posts</h1>
-                    <h2 className="text-lg flex justify-center mb-12">Welcome to my blog</h2>
+                <hr className="border-secondary border-2 opacity-25 rounded-xl my-20"></hr>
+                <section className="container mx-auto md:px-20 text-secondary">
                     <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
                         {postData && postData.map((post, index) => (
-                            <article>
-                                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                                <span className="block h-64 relative rounded shadow leading-snug bg-gradient-to-br from-secondary to-secondary-dark" key={index}>
-                                    <img
-                                        src={post.mainImage.asset.url}
-                                        alt={post.mainImage.alt}
-                                        className="w-full h-full rounded object-cover absolute"
-                                    />
-                                    <span className="relative h-full flex justify-end items-end pr-4 pb-4">
-                                        <h3 className="text-white text-lg font-blog bg-secondary rounded p-2">
-                                            {post.title}
-                                        </h3>
+                            <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+                                <article className="post-article">
+                                    <span className="block h-64 relative rounded leading-snug" key={index}>
+                                        <div className="img-wrapper rounded">
+                                            <img
+                                                src={post.mainImage.asset.url}
+                                                alt={post.mainImage.alt}
+                                                className="object-cover w-full h-full absolute"
+                                            />
+                                        </div>
+                                        <span className="relative h-full flex justify-end items-end pr-4 pb-4">
+                                            <h3 className="text-primary text-lg font-blog bg-secondary rounded p-2">
+                                                {post.title}
+                                            </h3>
+                                        </span>
                                     </span>
-                                </span>
-                                </Link>
-                            </article>
+                                </article>
+                            </Link>
                         ))}
                     </div>
+                    <div className="flex justify-center">
+                        <Link to="/post">
+                            <button className='btn border-2 bg-secondary border-secondary rounded-xl text-primary underline hover:bg-primary hover:text-secondary w-44 h-16 mt-10 text-3xl'>Blog Posts</button>
+                        </Link>
+                    </div>
                 </section>
-                <hr className="border-secondary border-2 opacity-25 rounded-xl"></hr>
-                <section className="container mx-auto md:p-20 mt-5 mb-10">
-                    <h1 className="text-secondary text-5xl flex justify-center Roboto">Projects</h1>
-                    <h2 className="text-lg text-secondary flex justify-center mb-12">Completed projects that I have made</h2>
+                <hr className="border-secondary border-2 opacity-25 rounded-xl my-20"></hr>
+                <section className="container mx-auto md:px-20">
                     <div className="grid md:grid-cols-3 lg:grid-col-3 gap-8">
                         {projectData && projectData.map((project, index) => (
-                            <article className="relative rounded-lg mx-auto bg-secondary p-16">
-                                <h3 className="text-white text-3xl font-bold hover:text-primary">
+                        <Link className="project-article" to={project.link} target="_blank">
+                        <article className=" relative rounded-lg mx-auto border-2 border-secondary text-primary bg-secondary hover:text-secondary hover:bg-primary transition ease-in-out p-8 md:p-16">
+                                <h3 className="text-3xl font-bold">
                                     <a
                                         href={project.link}
                                         alt={project.title}
@@ -121,7 +125,7 @@ export default function Home() {
                                         {project.title}
                                     </a>
                                 </h3>
-                                <div className="text-primary text-xs space-x-4">
+                                <div className="text-xs space-x-4">
                                     <span>
                                         <strong className="font-bold">Finished on</strong>:{" "}
                                         {new Date(project.date).toLocaleDateString()}
@@ -130,7 +134,7 @@ export default function Home() {
                                         <strong className="font-bold">Type</strong>:{" "}
                                         {project.projectType}
                                     </span>
-                                    <p className="my-6 text-lg text-primary leading-relaxed">
+                                    <p className="my-6 text-lg leading-relaxed">
                                         {project.description}
                                     </p>
                                     <a
@@ -138,14 +142,20 @@ export default function Home() {
                                         alt={project.title}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-white font-bold hover:underline hover:text-primary text-xl"
+                                        className="font-bold hover:underline text-xl"
                                     >
                                         View The Project{" "}
                                         <span role="img" aria-label="right pointer">🡆</span>
                                     </a>
                                 </div>
-                            </article>
+                        </article>
+                    </Link>
                         ))}
+                    </div>
+                    <div className="flex justify-center">
+                        <Link to="/project">
+                            <button className='btn border-2 bg-secondary border-secondary rounded-xl text-primary underline hover:bg-primary hover:text-secondary my-10 w-44 h-16 text-3xl'>Projects</button>
+                        </Link>
                     </div>
                 </section>
             </div>

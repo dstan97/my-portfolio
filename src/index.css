@@ -23,3 +23,40 @@ body {
   font-weight: normal;
   background: linear-gradient(#2EF297, #0C4028);
 }
+
+.img-wrapper {
+  background: #2EF297;
+}
+
+.img-wrapper img {
+  mix-blend-mode: darken;
+  filter: grayscale(100%);
+}
+
+.post-article{
+  transition: 0.25s;
+}
+
+.post-article:hover{
+  transform: scale(1.1);
+  transition: 0.25s;
+}
+
+.post-article:hover img {
+  mix-blend-mode: normal;
+  filter: none;
+  transition: 1s;
+}
+
+.post-article:hover h3 {
+  color: white;
+}
+
+.project-article{
+  transition: 0.25s;
+}
+
+.project-article:hover{
+  transform: scale(1.1);
+  transition: 0.25s;
+}

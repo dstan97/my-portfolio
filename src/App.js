@@ -5,6 +5,7 @@ import SinglePost from "./components/SinglePost";
 import Post from "./components/Post";
 import Project from "./components/Project";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Route element={<Post />} path='/post' />
         <Route element={<Project />} path='/project' />
       </Routes>
-      <ParticlesBackground />
+    <ParticlesBackground />
+    <Footer />
     </BrowserRouter>
   )
 }

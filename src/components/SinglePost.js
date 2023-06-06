@@ -29,11 +29,11 @@ export default function SinglePost() {
 
     return (
         <main className="">
-            <article className="container shadow-lg shadow-secondary-dark mx-auto bg-primary">
+            <article className="container shadow-lg shadow-secondary-dark my-10 mx-auto md:w-1/2 bg-primary">
                 <header className="relative">
                     <div className="absolute h-full w-full flex items-center justify-center p-8">
                         <div className="bg-primary bg-opacity-75 rounded p-12">
-                            <h1 className="Roboto text-secondary-dark text-3xl lg:text-6xl mb-4">
+                            <h1 className="Roboto text-secondary-dark text-center text-3xl lg:text-6xl mb-4">
                                 {singlePost.title}
                             </h1>
                         </div>
@@ -41,11 +41,11 @@ export default function SinglePost() {
                     <img
                         src={singlePost.mainImage.asset.url}
                         alt={singlePost.title}
-                        className="w-full object-cover rounded-t"
+                        className="w-full object-cover md:rounded-t"
                         style={{ height: "400px" }}
                     />
                 </header>
-                <div className=" prose lg:prose-xl max-w-full">
+                <div className=" prose lg:prose-xl max-w-full p-5">
                     <BlockContent
                         blocks={singlePost.body}
                         projectId="arnxyktp"

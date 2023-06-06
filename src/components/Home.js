@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import Pdf from '../../src/Dean Standerwick CV.pdf';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -77,15 +78,19 @@ export default function Home() {
                                 dataset="production"
                             />
                         </div>
+                        <a href = {Pdf} target = "_blank" className="w-full md:w-1/4 my-10">
+                            <button className="btn border-2 bg-secondary border-secondary rounded-xl text-primary hover:bg-primary hover:text-secondary p-4 text-2xl w-full h-full">View CV</button>
+                        </a>
                     </div>
                 </section>
-                <hr className="border-secondary border-2 opacity-25 rounded-xl my-20"></hr>
+                <hr className="border-secondary border-2 opacity-25 rounded-xl my-10"></hr>
                 <section className="container mx-auto md:px-20 text-secondary">
+                    <h2 className="Roboto text-2xl md:text-3xl mb-10 text-center">Latest Blog Posts</h2>
                     <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
                         {postData && postData.map((post, index) => (
                             <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                                 <article className="post-article">
-                                    <span className="block h-64 relative rounded leading-snug" key={index}>
+                                    <span className="block h-64 relative rounded-xl leading-snug" key={index}>
                                         <div className="img-wrapper rounded">
                                             <img
                                                 src={post.mainImage.asset.url}
@@ -105,12 +110,13 @@ export default function Home() {
                     </div>
                     <div className="flex justify-center">
                         <Link to="/post">
-                            <button className='btn border-2 bg-secondary border-secondary rounded-xl text-primary underline hover:bg-primary hover:text-secondary w-44 h-16 mt-10 text-3xl'>Blog Posts</button>
+                            <button className='btn blog-btn border-2 bg-secondary border-secondary rounded-xl text-primary hover:bg-primary hover:text-secondary mt-10 p-4 text-2xl'>View Blog Posts</button>
                         </Link>
                     </div>
                 </section>
-                <hr className="border-secondary border-2 opacity-25 rounded-xl my-20"></hr>
+                <hr className="border-secondary border-2 opacity-25 rounded-xl my-10"></hr>
                 <section className="container mx-auto md:px-20">
+                    <h2 className="Roboto text-2xl md:text-3xl mb-10 text-center">Latest Projects</h2>
                     <div className="grid md:grid-cols-3 lg:grid-col-3 gap-8">
                         {projectData && projectData.map((project, index) => (
                         <Link className="project-article" to={project.link} target="_blank">
@@ -154,7 +160,7 @@ export default function Home() {
                     </div>
                     <div className="flex justify-center">
                         <Link to="/project">
-                            <button className='btn border-2 bg-secondary border-secondary rounded-xl text-primary underline hover:bg-primary hover:text-secondary my-10 w-44 h-16 text-3xl'>Projects</button>
+                            <button className='btn project-btn border-2 bg-secondary border-secondary rounded-xl text-primary hover:bg-primary hover:text-secondary my-10 p-4 text-2xl'>View Projects</button>
                         </Link>
                     </div>
                 </section>

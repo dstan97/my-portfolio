@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
@@ -78,7 +78,7 @@ export default function Home() {
                                 dataset="production"
                             />
                         </div>
-                        <a href = {Pdf} className="w-full md:w-1/4 my-10">
+                        <a href = {Pdf} target = "_blank" rel="noreferrer" className="w-full md:w-1/4 my-10">
                             <button className="btn border-2 bg-secondary border-secondary rounded-xl text-primary hover:bg-primary hover:text-secondary p-4 text-2xl w-full h-full">View CV</button>
                         </a>
                     </div>

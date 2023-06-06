@@ -29,7 +29,7 @@ export default function Home() {
             .catch(console.error);
     }, [])
     useEffect(() => {
-        sanityClient.fetch(`*[_type == "post"] | order(_createdAt desc) [0...2]{
+        sanityClient.fetch(`*[_type == "post"] | order(_createdAt desc) [0...3]{
                title,
                slug,
                mainImage{

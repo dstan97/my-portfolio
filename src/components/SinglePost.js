@@ -45,7 +45,7 @@ export default function SinglePost() {
                         style={{ height: "400px" }}
                     />
                 </header>
-                <div className=" prose lg:prose-xl max-w-full p-5">
+                <div className=" prose lg:prose-xl max-w-full p-5 text-xl">
                     <BlockContent
                         blocks={singlePost.body}
                         projectId="arnxyktp"

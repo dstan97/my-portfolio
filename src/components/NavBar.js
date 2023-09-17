@@ -22,7 +22,7 @@ export default function NavBar() {
                 </nav>
                 <div className="w-1/4 flex justify-end md:p-3 h-1/4 md:m-0 m-auto">
                     <SocialIcon url="https://github.com/dstan97" className="mr-2 rounded-full bg-primary" bgColor="#161616" target="_blank" style={{ height: 35, width: 35}} />
-                    <SocialIcon url="https://www.linkedin.com/in/dean-standerwick-b41769255/" className="rounded-full bg-primary" target="_blank" bgColor="#161616" style={{ height: 35, width: 35}} />
+                    <SocialIcon url="https://www.linkedin.com/in/dean-standerwick-588068292/" className="rounded-full bg-primary" target="_blank" bgColor="#161616" style={{ height: 35, width: 35}} />
                 </div>
             </div>
         </header>

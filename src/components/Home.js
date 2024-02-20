@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
-import Pdf from '../../src/Dean Standerwick CV.pdf';
+import Pdf from '../../src/Dean_Standerwick_Dev_CV_(2024).pdf';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
